@@ -1,0 +1,121 @@
+/* GLOBAL VARIABLES */
+
+:root {
+    --primary-color: #EB0045;
+    --secondary-color: #FFFFFF;
+    --grey-color: #AAAAAA;
+    --bg-color-disabled: #EEEEEE;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    max-width: 80px;
+    align-items: center;
+    position: relative;
+    margin: 2em;
+}
+
+/*Hiding Checkbox*/
+
+#menu-open {
+    display: none;
+}
+
+/*  -- Hamburger - Menu Button --- */
+
+.menu-open-button{
+    width: 70px;
+    height: 70px;
+    transition: all .2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.menu-open-button:hover {
+    width: 80px;
+    height: 80px;
+    transition: all .2s ease-in-out;
+}
+
+
+.menu-line {
+    margin: 3px;
+    display: block;
+    width: 35%;
+    height: 3px;
+    background: var(--secondary-color);
+    transition: all .2s ease-in-out;
+}
+
+#menu-open:checked ~ .menu-open-button {
+    width: 60px;
+    height: 60px;
+    margin-bottom: .8rem;
+}
+
+ /* Transforming Hamburguer lines to the form of an "X" */
+
+#menu-open:checked ~ .menu-open-button .menu-line-1{
+    transform: rotate(45deg);
+    position: absolute;
+    transition: all .2s ease-in-out;
+}
+
+#menu-open:checked ~ .menu-open-button .menu-line-2 {
+    display: none;
+    transition: all .2s ease-in-out;
+}
+
+#menu-open:checked ~ .menu-open-button .menu-line-3{
+    transform: rotate(-45deg);
+    position: absolute;
+    transition: all .2s ease-in-out;
+}
+
+/* Hiding Menu items */
+
+#menu-open ~ .menu-item {
+    z-index: -1;
+    bottom: 5%;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+}
+
+/* Displaying menu items*/
+
+#menu-open:checked ~ .menu-item {
+    position: unset;
+    bottom: unset;
+    z-index: unset;
+
+}
+
+/* Menu Items (size, layaout, etc)*/
+
+.menu-item, .menu-open-button {
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .3rem;
+}
+
+.menu-item:hover {
+    background: var(--secondary-color);
+}
+a {
+    text-decoration: none;
+}
+
+.fa {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+}
+.menu-item:hover .fa {
+    color: var(--primary-color);
+}
