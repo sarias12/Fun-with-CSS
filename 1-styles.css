@@ -1,0 +1,29 @@
+
+/* GLOBAL VARIABLES */
+:root {
+    --primary-color: #EB0045;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    position: relative;
+}
+
+/* Underline before hover */
+a::after{
+    content: '';
+    height: 2px;
+    background-color: var(--primary-color);
+    position: absolute;
+    width: 0%;
+    left: 0%;
+    bottom: 0%;
+    transition: all .3s ease-in;
+}
+
+/* Underline with hover */
+a:hover::after {
+    width: 100%;
+    transition: all .3s ease-in;
+}
