@@ -20,7 +20,7 @@
 #### Toggle (Disabled)
 ![Toggle (Disabled)](./images/img2-2.png)
 
-### [3. Menu](./3-index.html)
+### [3. Menu](./3-styles.css)
 * generate this layout/animation:
 
 ![Menu](./images/img3.gif)
